@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Tech Data Limited</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #1f4e78;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #1f4e78;
+      margin-bottom: 15px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      border-radius: 7px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      background: #1f4e78;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #163a5c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Shree Tech Data Limited</h1>
+    <p>Welcome to our website</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>About Us</h2>
+      <p>
+        Welcome to Shree Tech Data Limited.
+        This website is created to manage and display company information
+        in a simple and professional manner.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Contact / Enquiry</h2>
+
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <input type="tel" id="mobile" placeholder="Enter mobile number">
+
+      <textarea id="message" placeholder="Enter your message"></textarea>
+
+      <button onclick="submitForm()">Submit</button>
+
+      <p id="result"></p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Shree Tech Data Limited. All Rights Reserved.
+  </footer>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const mobile = document.getElementById("mobile").value;
+      const message = document.getElementById("message").value;
+
+      if (name === "" || mobile === "" || message === "") {
+        document.getElementById("result").innerText =
+          "Please fill all details.";
+        return;
+      }
+
+      document.getElementById("result").innerText =
+        "Thank you, " + name + "! Your enquiry has been submitted.";
+
+      document.getElementById("name").value = "";
+      document.getElementById("mobile").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+
+</body>
+</html>
